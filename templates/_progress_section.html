@@ -1,0 +1,31 @@
+<div id="progress-root" class="card" data-empty-message="{{ empty_message|default('No document is currently being processed.') }}">
+  <div id="progress-empty" class="empty-state" hidden>
+    <p>No document is currently being processed.</p>
+    <a class="btn btn-primary" href="/upload">Upload a Document</a>
+  </div>
+
+  <div id="progress-active">
+    <h1>Processing Your Document</h1>
+    <p id="progress-status-message" class="lead">Uploading&hellip;</p>
+
+    <div class="progress-bar-track" role="progressbar" aria-valuemin="0" aria-valuemax="100"
+         aria-valuenow="0" id="progress-bar-track">
+      <div class="progress-bar-fill" id="progress-bar-fill" style="width: 0%;"></div>
+    </div>
+    <p class="progress-percent"><span id="progress-percent-value">0</span>%</p>
+
+    <ol class="stage-list" id="stage-list" aria-label="Processing stages">
+      <li data-stage="queued">Uploading</li>
+      <li data-stage="routing">Routing</li>
+      <li data-stage="parsing">Parsing</li>
+      <li data-stage="structuring">Structuring</li>
+      <li data-stage="chunking">Chunking</li>
+      <li data-stage="embedding">Embedding</li>
+      <li data-stage="indexing">Indexing</li>
+      <li data-stage="classifying">Classification</li>
+      <li data-stage="extracting_knowledge">Knowledge Extraction</li>
+      <li data-stage="generating_package">Teaching Package Generation</li>
+      <li data-stage="completed">Completed</li>
+    </ol>
+  </div>
+</div>

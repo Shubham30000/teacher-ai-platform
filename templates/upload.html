@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+{% block title %}Upload &mdash; {{ app_name }}{% endblock %}
+
+{% block content %}
+<section class="card" id="upload-section">
+  <h1>Upload a Document</h1>
+  <p class="lead">Select a chapter, paper, or set of notes to turn into a Teaching Package.</p>
+
+  <form id="upload-form" novalidate>
+    <div class="field">
+      <label for="file-input">Document</label>
+      <input type="file" id="file-input" name="file" accept=".pdf,.docx,.pptx,.txt">
+      <p class="hint">Accepted formats: PDF, DOCX, PPTX, TXT. Maximum size: {{ max_upload_size_mb }}MB.</p>
+    </div>
+
+    <p id="selected-filename" class="selected-filename" hidden></p>
+    <p id="validation-message" class="validation-message" role="alert" hidden></p>
+
+    <div class="button-row">
+      <button type="submit" class="btn btn-primary" id="upload-btn">Upload</button>
+      <button type="button" class="btn btn-secondary" id="reset-btn">Reset</button>
+    </div>
+  </form>
+</section>
+
+<section class="card" id="progress-section" hidden>
+  {% include "_progress_section.html" %}
+</section>
+{% endblock %}
+
+{% block scripts %}
+<script src="/static/js/app.js"></script>
+<script src="/static/js/upload.js"></script>
+{% endblock %}

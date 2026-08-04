@@ -1,0 +1,380 @@
+/* Teacher AI Platform - Phase 2B
+   Pure CSS. No frameworks, no gradients, no animations except the
+   progress bar fill transition. */
+
+:root {
+  --color-bg: #f7f7f5;
+  --color-surface: #ffffff;
+  --color-border: #dcdcd6;
+  --color-text: #1f2421;
+  --color-muted: #5f665f;
+  --color-primary: #2f6f4f;
+  --color-primary-dark: #24583f;
+  --color-danger: #a4342a;
+  --color-danger-bg: #fbeceb;
+  --radius: 8px;
+  --max-width: 880px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+  color: var(--color-text);
+  background: var(--color-bg);
+  line-height: 1.5;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Header */
+.site-header {
+  background: var(--color-surface);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 20px;
+}
+
+.brand {
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: var(--color-primary-dark);
+  text-decoration: none;
+}
+
+.site-nav a {
+  margin-left: 20px;
+  color: var(--color-text);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.site-nav a:hover,
+.site-nav a:focus {
+  text-decoration: underline;
+}
+
+/* Layout */
+.page {
+  flex: 1;
+  padding: 32px 20px 48px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: 24px;
+}
+
+h1 {
+  font-size: 1.6rem;
+  margin: 0 0 12px;
+}
+
+h2 {
+  font-size: 1.2rem;
+  margin: 0 0 12px;
+}
+
+.lead {
+  font-size: 1.05rem;
+  color: var(--color-muted);
+}
+
+.hint {
+  color: var(--color-muted);
+  font-size: 0.9rem;
+}
+
+.muted {
+  color: var(--color-muted);
+}
+
+/* Buttons */
+.btn {
+  display: inline-block;
+  padding: 10px 20px;
+  border-radius: var(--radius);
+  border: 1px solid transparent;
+  font-size: 1rem;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.btn-primary {
+  background: var(--color-primary);
+  color: #fff;
+}
+
+.btn-primary:hover,
+.btn-primary:focus {
+  background: var(--color-primary-dark);
+}
+
+.btn-secondary {
+  background: var(--color-surface);
+  color: var(--color-text);
+  border-color: var(--color-border);
+}
+
+.btn-secondary:hover,
+.btn-secondary:focus {
+  background: var(--color-bg);
+}
+
+.btn:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+.button-row {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-top: 12px;
+}
+
+/* Forms */
+.field {
+  margin-bottom: 16px;
+}
+
+label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+input[type="file"] {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  background: var(--color-bg);
+}
+
+.selected-filename {
+  font-weight: 600;
+  margin: 8px 0;
+}
+
+.validation-message {
+  color: var(--color-danger);
+  background: var(--color-danger-bg);
+  border: 1px solid var(--color-danger);
+  border-radius: var(--radius);
+  padding: 10px 14px;
+  margin: 12px 0;
+}
+
+/* Workflow diagram */
+.workflow {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.workflow li {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  padding: 10px 14px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  background: var(--color-bg);
+}
+
+.workflow-step {
+  font-weight: 700;
+  color: var(--color-primary-dark);
+  min-width: 160px;
+}
+
+.format-list {
+  padding-left: 20px;
+}
+
+/* Progress page */
+.progress-bar-track {
+  width: 100%;
+  height: 16px;
+  background: var(--color-bg);
+  border: 1px solid var(--color-border);
+  border-radius: 999px;
+  overflow: hidden;
+  margin-top: 16px;
+}
+
+.progress-bar-fill {
+  height: 100%;
+  background: var(--color-primary);
+  width: 0%;
+  transition: width 0.4s ease;
+}
+
+.progress-percent {
+  margin: 8px 0 0;
+  font-weight: 700;
+}
+
+.stage-list {
+  list-style: none;
+  padding: 0;
+  margin: 20px 0 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.stage-list li {
+  padding: 8px 12px;
+  border-radius: var(--radius);
+  color: var(--color-muted);
+  border: 1px solid transparent;
+}
+
+.stage-list li.stage-done {
+  color: var(--color-primary-dark);
+}
+
+.stage-list li.stage-done::before {
+  content: "\2713  ";
+}
+
+.stage-list li.stage-current {
+  background: var(--color-bg);
+  border-color: var(--color-primary);
+  color: var(--color-primary-dark);
+  font-weight: 700;
+}
+
+/* Empty states */
+.empty-state {
+  text-align: center;
+  padding: 24px 0;
+}
+
+/* Results page */
+.metadata-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 12px;
+  margin: 0;
+}
+
+.metadata-grid dt {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  color: var(--color-muted);
+}
+
+.metadata-grid dd {
+  margin: 2px 0 0;
+  font-weight: 600;
+}
+
+.module-card {
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  margin-bottom: 12px;
+  overflow: hidden;
+}
+
+.module-card summary {
+  cursor: pointer;
+  padding: 14px 16px;
+  font-weight: 700;
+  background: var(--color-bg);
+  list-style: none;
+}
+
+.module-card summary::-webkit-details-marker {
+  display: none;
+}
+
+.module-card summary::before {
+  content: "\25B8  ";
+}
+
+.module-card[open] summary::before {
+  content: "\25BE  ";
+}
+
+.module-card .module-body {
+  padding: 16px;
+}
+
+.module-card .module-body h4 {
+  margin: 16px 0 6px;
+}
+
+.module-card .module-body h4:first-child {
+  margin-top: 0;
+}
+
+.module-card .module-body ul {
+  margin: 4px 0;
+  padding-left: 20px;
+}
+
+.module-unavailable {
+  color: var(--color-muted);
+  font-style: italic;
+}
+
+/* Error card */
+.error-card {
+  text-align: center;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .header-inner {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  .site-nav a {
+    margin-left: 0;
+    margin-right: 16px;
+  }
+
+  .workflow-step {
+    min-width: auto;
+  }
+
+  .workflow li {
+    flex-direction: column;
+    gap: 2px;
+  }
+}

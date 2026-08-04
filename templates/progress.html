@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block title %}Processing &mdash; {{ app_name }}{% endblock %}
+
+{% block content %}
+{% include "_progress_section.html" %}
+{% endblock %}
+
+{% block scripts %}
+<script src="/static/js/app.js"></script>
+<script src="/static/js/progress.js"></script>
+{% endblock %}

@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+
+{% block title %}Page Not Found &mdash; {{ app_name }}{% endblock %}
+
+{% block content %}
+<section class="card error-card">
+  <h1>Page Not Found</h1>
+  <p class="lead">The page you're looking for doesn't exist.</p>
+  <a class="btn btn-primary" href="/">Return to Home</a>
+</section>
+{% endblock %}

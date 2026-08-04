@@ -1,0 +1,43 @@
+# Requires Python 3.10 or newer (the codebase uses PEP 604 `X | None` syntax).
+#
+# Version ranges (not exact pins) are used deliberately: chromadb pulls in its
+# own fastapi/starlette/uvicorn/pydantic constraints, and hard `==` pins here
+# would fight pip's resolver against those. Ranges let pip pick mutually
+# compatible versions. If you need a fully reproducible/locked environment,
+# run `pip freeze > requirements.lock.txt` after a successful install.
+#
+# Recommended install:
+#   python3 -m venv .venv && source .venv/bin/activate   (Windows: .venv\Scripts\activate)
+#   pip install --upgrade pip
+#   pip install -r requirements.txt
+
+# --- Web framework ---
+fastapi>=0.115.0,<0.120.0
+uvicorn[standard]>=0.30.0,<0.35.0
+python-multipart>=0.0.9,<0.1.0
+
+# --- Data validation / settings ---
+pydantic>=2.7.0,<3.0.0
+pydantic-settings>=2.4.0,<3.0.0
+
+# --- AI / orchestration ---
+langchain>=0.3.0,<0.4.0
+langchain-community>=0.3.0,<0.4.0
+google-genai>=1.20.0,<2.0.0
+
+# --- Vector database ---
+chromadb>=0.5.15,<0.6.0
+
+# --- Document parsing ---
+pymupdf>=1.24.0,<2.0.0
+python-docx>=1.1.0,<2.0.0
+python-pptx>=1.0.0,<2.0.0
+
+# --- Config / env ---
+python-dotenv>=1.0.0,<2.0.0
+
+# --- Testing ---
+pytest>=8.0.0,<9.0.0
+pytest-asyncio>=0.24.0,<0.26.0
+httpx>=0.27.0,<0.29.0
+Jinja2>=3.1.0

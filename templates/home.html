@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+
+{% block title %}{{ app_name }} &mdash; AI Teaching Assistant{% endblock %}
+
+{% block content %}
+<section class="hero card">
+  <h1>{{ app_name }}</h1>
+  <p class="lead">
+    Turn a chapter, paper, or set of notes into a complete, classroom-ready
+    Teaching Package &mdash; lesson plan, teacher script, activities,
+    assessment, and more &mdash; grounded in the document you upload.
+  </p>
+  <a class="btn btn-primary" href="/upload">Upload a Document</a>
+</section>
+
+<section class="card">
+  <h2>Supported File Formats</h2>
+  <ul class="format-list">
+    <li>PDF <span class="muted">(.pdf)</span></li>
+    <li>Word Document <span class="muted">(.docx)</span></li>
+    <li>PowerPoint <span class="muted">(.pptx)</span></li>
+    <li>Plain Text <span class="muted">(.txt)</span></li>
+  </ul>
+</section>
+
+<section class="card">
+  <h2>How It Works</h2>
+  <ol class="workflow">
+    <li>
+      <span class="workflow-step">Upload</span>
+      <span class="workflow-desc">Choose your document.</span>
+    </li>
+    <li>
+      <span class="workflow-step">AI Processing</span>
+      <span class="workflow-desc">Parsing, classification, and knowledge extraction.</span>
+    </li>
+    <li>
+      <span class="workflow-step">Teaching Package</span>
+      <span class="workflow-desc">Lesson plan, activities, assessments, and more.</span>
+    </li>
+    <li>
+      <span class="workflow-step">Download</span>
+      <span class="workflow-desc">Save as JSON, PDF, or Word.</span>
+    </li>
+  </ol>
+</section>
+{% endblock %}

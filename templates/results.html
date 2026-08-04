@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+
+{% block title %}Teaching Package &mdash; {{ app_name }}{% endblock %}
+
+{% block content %}
+<div id="results-loading" class="card">
+  <p>Loading your Teaching Package&hellip;</p>
+</div>
+
+<div id="results-empty" class="card empty-state" hidden>
+  <h1>No Teaching Package Found</h1>
+  <p id="results-empty-message">We couldn't find a Teaching Package for this document.</p>
+  <a class="btn btn-primary" href="/upload">Upload a Document</a>
+</div>
+
+<div id="results-content" hidden>
+  <section class="card">
+    <h1 id="results-filename">Document</h1>
+    <dl class="metadata-grid" id="metadata-grid"></dl>
+  </section>
+
+  <section class="card">
+    <h2>Knowledge Summary</h2>
+    <dl class="metadata-grid" id="knowledge-summary-grid"></dl>
+  </section>
+
+  <section class="card">
+    <h2>Teaching Package Summary</h2>
+    <p id="package-summary-text"></p>
+  </section>
+
+  <section class="card" id="downloads-section">
+    <h2>Downloads</h2>
+    <div class="button-row">
+      <a class="btn btn-primary" id="download-json" href="#">Download JSON</a>
+      <a class="btn btn-primary" id="download-pdf" href="#">Download PDF</a>
+      <a class="btn btn-primary" id="download-docx" href="#">Download DOCX</a>
+    </div>
+    <p id="download-unavailable" class="hint" hidden>
+      Downloads become available once the Teaching Package has finished generating.
+    </p>
+  </section>
+
+  <section class="card">
+    <h2>Generated Modules</h2>
+    <div id="module-cards"></div>
+  </section>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script src="/static/js/app.js"></script>
+<script>window.TAP_DOCUMENT_ID = {{ document_id|tojson }};</script>
+<script src="/static/js/results.js"></script>
+{% endblock %}

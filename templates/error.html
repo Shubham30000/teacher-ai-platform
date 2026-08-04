@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block title %}Something Went Wrong &mdash; {{ app_name }}{% endblock %}
+
+{% block content %}
+<section class="card error-card">
+  <h1 id="error-title">Something Went Wrong</h1>
+  <p id="error-message" class="lead">We couldn't process your document.</p>
+  <p id="error-action" class="hint"></p>
+
+  <div class="button-row">
+    <button type="button" class="btn btn-primary" id="retry-btn">Retry</button>
+    <a class="btn btn-secondary" href="/upload">Back to Upload</a>
+  </div>
+</section>
+{% endblock %}
+
+{% block scripts %}
+<script src="/static/js/app.js"></script>
+<script src="/static/js/error.js"></script>
+{% endblock %}

@@ -1,0 +1,83 @@
+# =========================
+# Python
+# =========================
+__pycache__/
+*.py[cod]
+*$py.class
+*.pyo
+*.pyd
+
+# =========================
+# Virtual Environment
+# =========================
+.venv/
+venv/
+env/
+ENV/
+
+# =========================
+# Environment Variables
+# =========================
+.env
+.env.*
+
+# =========================
+# Pytest
+# =========================
+.pytest_cache/
+.coverage
+htmlcov/
+
+# =========================
+# IDE
+# =========================
+.vscode/
+.idea/
+*.swp
+
+# =========================
+# OS Files
+# =========================
+.DS_Store
+Thumbs.db
+
+# =========================
+# Build
+# =========================
+build/
+dist/
+*.egg-info/
+
+# =========================
+# Logs
+# =========================
+*.log
+
+# =========================
+# Runtime Generated Data
+# =========================
+data/uploads/
+data/generated/
+data/output/
+data/temp/
+tmp/
+temp/
+
+# =========================
+# Chroma Vector Database
+# =========================
+data/vectorstore/
+chroma/
+chroma_db/
+
+# =========================
+# SQLite Databases
+# =========================
+*.sqlite
+*.sqlite3
+*.db
+
+# =========================
+# Jupyter
+# =========================
+.ipynb_checkpoints/
